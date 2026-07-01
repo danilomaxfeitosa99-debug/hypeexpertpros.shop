@@ -1,1 +1,696 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leo Vasconcelos | Consultoria Native & Google Ads</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <!-- Font Awesome (Ícones) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* HEADER / NAV */
+        .navbar {
+            padding: 20px 0;
+            border-bottom: 1px solid #e2e8f0;
+            background-color: #ffffff;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-cta {
+            background-color: #1e293b;
+            color: #fff;
+            padding: 10px 24px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: background 0.2s;
+        }
+
+        .nav-cta:hover {
+            background-color: #0f172a;
+        }
+
+        /* HERO */
+        .hero {
+            padding: 60px 0 80px;
+            background: linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: #dbeafe;
+            color: #1e40af;
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -1.5px;
+            color: #0f172a;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #475569;
+            margin-bottom: 30px;
+            max-width: 500px;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .hero-stats div {
+            text-align: left;
+        }
+
+        .hero-stats strong {
+            display: block;
+            font-size: 2rem;
+            font-weight: 800;
+            color: #0f172a;
+        }
+
+        .hero-stats span {
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
+            color: #fff;
+            padding: 16px 40px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(37, 99, 235, 0.4);
+        }
+
+        .btn-secondary {
+            display: inline-block;
+            background: transparent;
+            color: #1e293b;
+            padding: 16px 32px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 600;
+            border: 2px solid #cbd5e1;
+            transition: background 0.2s;
+            margin-left: 10px;
+        }
+
+        .btn-secondary:hover {
+            background: #f1f5f9;
+        }
+
+        .btn-email {
+            display: inline-block;
+            background: #1e293b;
+            color: #fff;
+            padding: 16px 32px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 600;
+            border: 2px solid #1e293b;
+            transition: all 0.2s;
+            margin-left: 10px;
+        }
+
+        .btn-email:hover {
+            background: #0f172a;
+            border-color: #0f172a;
+            transform: translateY(-3px);
+        }
+
+        .hero-image {
+            background: #e2e8f0;
+            border-radius: 30px;
+            padding: 40px;
+            text-align: center;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><polygon points="0,0 100,0 100,100 0,100" fill="%23f1f5f9" opacity="0.4"/></svg>');
+            background-size: cover;
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #e2e8f0;
+        }
+
+        .hero-image i {
+            font-size: 4rem;
+            color: #2563eb;
+            background: white;
+            padding: 30px;
+            border-radius: 50%;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+        }
+
+        .hero-image h3 {
+            margin-top: 20px;
+            color: #1e293b;
+        }
+
+        /* SOCIAL PROOF */
+        .social-proof {
+            padding: 40px 0;
+            background: #ffffff;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .social-proof .container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .social-proof span {
+            font-weight: 600;
+            color: #94a3b8;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+        }
+
+        /* SERVICES */
+        .services {
+            padding: 80px 0;
+            background: #ffffff;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #0f172a;
+            letter-spacing: -1px;
+        }
+
+        .section-title p {
+            color: #64748b;
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 10px auto 0;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: #f8fafc;
+            padding: 40px 30px;
+            border-radius: 24px;
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.04);
+            border-color: #b1c5e0;
+        }
+
+        .card i {
+            font-size: 2.5rem;
+            color: #2563eb;
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: #475569;
+        }
+
+        /* ABOUT */
+        .about {
+            padding: 80px 0;
+            background: #f1f5f9;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-content h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 20px;
+        }
+
+        .about-content p {
+            color: #475569;
+            margin-bottom: 16px;
+            font-size: 1.1rem;
+        }
+
+        .about-content ul {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .about-content ul li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 500;
+        }
+
+        .about-content ul li i {
+            color: #2563eb;
+            font-size: 1.2rem;
+        }
+
+        .about-image {
+            background: #dbeafe;
+            border-radius: 30px;
+            padding: 40px;
+            text-align: center;
+            min-height: 250px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #b1c5e0;
+        }
+
+        .about-image i {
+            font-size: 5rem;
+            color: #1e40af;
+            background: white;
+            padding: 30px;
+            border-radius: 50%;
+        }
+
+        /* SEÇÃO EMAIL DIRETO */
+        .email-section {
+            padding: 80px 0;
+            background: #ffffff;
+        }
+
+        .email-box {
+            max-width: 700px;
+            margin: 0 auto;
+            background: #f8fafc;
+            padding: 50px;
+            border-radius: 30px;
+            border: 1px solid #e2e8f0;
+            text-align: center;
+        }
+
+        .email-box h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 12px;
+        }
+
+        .email-box p {
+            color: #475569;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+
+        .email-box .btn-email-big {
+            display: inline-block;
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
+            color: #fff;
+            padding: 18px 50px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.2rem;
+            box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3);
+            transition: all 0.3s;
+        }
+
+        .email-box .btn-email-big:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 14px 35px rgba(37, 99, 235, 0.4);
+        }
+
+        .email-box .email-link {
+            display: block;
+            margin-top: 16px;
+            color: #2563eb;
+            font-size: 1.3rem;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .email-box .email-link:hover {
+            text-decoration: underline;
+        }
+
+        .email-box .fa-envelope {
+            margin-right: 10px;
+        }
+
+        /* CTA FINAL */
+        .cta-final {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: white;
+            text-align: center;
+        }
+
+        .cta-final h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+            letter-spacing: -1px;
+        }
+
+        .cta-final p {
+            font-size: 1.2rem;
+            color: #cbd5e1;
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        .cta-final .btn-primary {
+            background: linear-gradient(135deg, #ffffff, #e2e8f0);
+            color: #0f172a;
+            box-shadow: 0 8px 30px rgba(255,255,255,0.2);
+        }
+
+        .cta-final .btn-primary:hover {
+            background: #ffffff;
+            box-shadow: 0 12px 40px rgba(255,255,255,0.3);
+        }
+
+        .cta-final .btn-email {
+            background: transparent;
+            border-color: #ffffff;
+            color: #ffffff;
+            margin-left: 10px;
+        }
+
+        .cta-final .btn-email:hover {
+            background: rgba(255,255,255,0.1);
+        }
+
+        /* FOOTER */
+        .footer {
+            padding: 40px 0;
+            background: #0f172a;
+            border-top: 1px solid #1e293b;
+            text-align: center;
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        .footer a {
+            color: #94a3b8;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        /* RESPONSIVO */
+        @media (max-width: 900px) {
+            .hero-grid, .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-stats {
+                flex-wrap: wrap;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .cta-final h2 {
+                font-size: 2rem;
+            }
+
+            .btn-secondary, .btn-email {
+                margin-left: 0;
+                margin-top: 10px;
+            }
+
+            .email-box {
+                padding: 30px 20px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .navbar .container {
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .email-box h2 {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">Leo Vasconcelos</div>
+            <a href="mailto:lvsiuris@gmail.com" class="nav-cta"><i class="fas fa-envelope"></i> Falar por E-mail</a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container hero-grid">
+            <div>
+                <div class="hero-badge"><i class="fas fa-fire" style="margin-right: 6px;"></i> +50 afiliados escalados</div>
+                <h1>Escale seus resultados com <span>Native & Google Ads</span> na Europa</h1>
+                <p>Estratégia testada + mentoria prática para você sair do zero ou do sufoco e chegar a <strong>5 dígitos por mês</strong> com tráfego pago.</p>
+                <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                    <a href="#cta" class="btn-primary"><i class="fas fa-calendar-check"></i> Quero minha sessão</a>
+                    <a href="mailto:lvsiuris@gmail.com" class="btn-email"><i class="fas fa-envelope"></i> Fale direto</a>
+                </div>
+                <div class="hero-stats">
+                    <div>
+                        <strong>€2.4M+</strong>
+                        <span>em revenue gerado</span>
+                    </div>
+                    <div>
+                        <strong>2022</strong>
+                        <span>início no mercado</span>
+                    </div>
+                    <div>
+                        <strong>12+</strong>
+                        <span>cursos e mentorias</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <i class="fas fa-chart-line"></i>
+                <h3>Leonardo Vasconcelos</h3>
+                <p style="color: #475569; max-width: 80%;">Especialista em Native Ads & Google Ads para o mercado europeu</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOCIAL PROOF -->
+    <section class="social-proof">
+        <div class="container">
+            <span><i class="fas fa-check-circle" style="color: #2563eb;"></i> Hotmart</span>
+            <span><i class="fas fa-check-circle" style="color: #2563eb;"></i> Monetizze</span>
+            <span><i class="fas fa-check-circle" style="color: #2563eb;"></i> Kiwify</span>
+            <span><i class="fas fa-check-circle" style="color: #2563eb;"></i> Perfect Pay</span>
+            <span><i class="fas fa-check-circle" style="color: #2563eb;"></i> Eduzz</span>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>O que você vai aprender</h2>
+                <p>Metodologia que já gerou mais de 2 milhões de euros em vendas para afiliados na Europa</p>
+            </div>
+            <div class="cards-grid">
+                <div class="card">
+                    <i class="fas fa-google"></i>
+                    <h3>Google Ads Profissional</h3>
+                    <p>Estrutura de campanhas, palavras-chave, budget otimizado e estratégias de lances para o mercado europeu.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-newspaper"></i>
+                    <h3>Native Ads (MGID, Outbrain)</h3>
+                    <p>Como criar teasers que convertem, escalar campanhas com CPA e dominar o tráfego nativo na Europa.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-euro-sign"></i>
+                    <h3>Otimização para ROI</h3>
+                    <p>Análise de dados, ajustes finos, como cortar desperdício e dobrar os lucros com as mesmas campanhas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+        <div class="container about-grid">
+            <div class="about-content">
+                <h2>De afiliado a mentor de afiliados</h2>
+                <p>Meu nome é <strong>Leonardo Vasconcelos</strong>. Comecei no marketing digital em <strong>2022</strong>, como afiliado, rodando Google Ads e Native Ads.</p>
+                <p>Em menos de 1 ano, já havia gerado mais de <strong>€2 milhões em receita</strong> para meus próprios funis e para parceiros. Criei mais de <strong>12 cursos e treinamentos</strong> e hoje compartilho minha metodologia com afiliados que querem dominar o tráfego pago na Europa.</p>
+                <p>Já ajudei mais de <strong>50 afiliados</strong> a saírem do zero ou a multiplicarem seus resultados com estratégias testadas e validadas.</p>
+                <ul>
+                    <li><i class="fas fa-check-circle"></i> Especialista em Native Ads (MGID, Outbrain)</li>
+                    <li><i class="fas fa-check-circle"></i> Google Ads para afiliados</li>
+                    <li><i class="fas fa-check-circle"></i> Funis de alta conversão para Europa</li>
+                </ul>
+            </div>
+            <div class="about-image">
+                <i class="fas fa-user-tie"></i>
+                <h3 style="margin-top: 20px;">Leonardo Vasconcelos</h3>
+                <p style="color: #1e40af; font-weight: 600;">Traffic & Conversion Specialist</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO DE EMAIL DIRETO -->
+    <section class="email-section" id="email">
+        <div class="container">
+            <div class="email-box">
+                <i class="fas fa-envelope" style="font-size: 3rem; color: #2563eb; margin-bottom: 16px;"></i>
+                <h2>Fale diretamente comigo</h2>
+                <p>Prefere enviar um e-mail? Me mande uma mensagem direta que eu respondo pessoalmente em até 24h.</p>
+                <a href="mailto:lvsiuris@gmail.com" class="btn-email-big">
+                    <i class="fas fa-paper-plane"></i> Enviar e-mail agora
+                </a>
+                <a href="mailto:lvsiuris@gmail.com" class="email-link">
+                    lvsiuris@gmail.com
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="cta-final" id="cta">
+        <div class="container">
+            <h2>Pronto para escalar seus resultados?</h2>
+            <p>Agende uma sessão estratégica gratuita ou fale comigo por e-mail para tirar suas dúvidas.</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
+                <a href="#" class="btn-primary"><i class="fas fa-calendar-check"></i> Agendar Sessão</a>
+                <a href="mailto:lvsiuris@gmail.com" class="btn-email"><i class="fas fa-envelope"></i> Falar por E-mail</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <p style="margin-bottom: 8px;">© 2026 Leonardo Vasconcelos | Consultoria de Tráfego</p>
+            <p>
+                <a href="mailto:lvsiuris@gmail.com"><i class="fas fa-envelope"></i> lvsiuris@gmail.com</a>
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
